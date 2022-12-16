@@ -1,5 +1,6 @@
 from PyQt5 import uic
 from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtCore import Qt
 import sys
 
 
@@ -20,6 +21,12 @@ class MainWindow(QMainWindow):
 
     def agree(self):
         check(self.login_place.text(), self.password_place.text())
+
+    def keyPressEvent(self, e):
+        if e.key() == Qt.Key_Escape:
+            self.close()
+        if e.key() == Qt.Key_Enter:
+            self.agree()
 
 
 def application():
