@@ -4,23 +4,17 @@ from PyQt5.QtCore import Qt
 import sys
 
 
-def check(log, pas):
-    base = (('Kolya', '12354'), ('Misha', '0011'))
-    if (log, pas) in base:
-        print('Успешно')
-    else:
-        print('Отклонено')
-
-
 class MainWindow(QMainWindow):
+    base = [('Kolya', '12354'), ('Misha', '0011')]
 
     def __init__(self):
         super().__init__()
         uic.loadUi('enter.ui', self)
         self.agree_button.clicked.connect(self.agree)
+        self.regist_button.clicked.connect(self.registr)
 
     def agree(self):
-        check(self.login_place.text(), self.password_place.text())
+        self.check(self.login_place.text(), self.password_place.text())
 
     def keyPressEvent(self, e):
         if e.key() == Qt.Key_Escape:
@@ -28,13 +22,28 @@ class MainWindow(QMainWindow):
         if e.key() == Qt.Key_Enter:
             self.agree()
 
+    def registr(self):
+        print('Зарегестрировано')
+        print('Логин:', self.login_place.text())
+        print('Пароль:', self.password_place.text())
+        temp = tuple((self.login_place.text(), self.password_place.text()))
+        self.base.append(temp)
+        print(self.base)
+
+    def check(self, log, pas):
+        if (log, pas) in self.base:
+            print('Успешно')
+            self.massage.setText('')
+        else:
+            print('Отклонено')
+            self.massage.setText('Отклонено')
+
 
 def application():
     app = QApplication(sys.argv)
-    window_ = MainWindow()
-    window_.show()
+    window1 = MainWindow()
+    window1.show()
     sys.exit(app.exec_())
-
 
 if __name__ == '__main__':
     application()

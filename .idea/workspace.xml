@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="Добавлен интерфейс авторизации">
-      <change beforePath="$PROJECT_DIR$/.idea/hackathon.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hackathon.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="Добавлен обработчик событий нажатия клавиш Escape и Enter">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authorization_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/authorization_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enter.ui" beforeDir="false" afterPath="$PROJECT_DIR$/enter.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671210234966</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Добавлен обработчик событий нажатия клавиш Escape и Enter">
+      <created>1671212127390</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671212127390</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +128,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Добавлен интерфейс авторизации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен интерфейс авторизации" />
+    <MESSAGE value="Добавлен обработчик событий нажатия клавиш Escape и Enter" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен обработчик событий нажатия клавиш Escape и Enter" />
   </component>
 </project>
