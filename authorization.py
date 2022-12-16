@@ -33,5 +33,3 @@ class Authorization:
         self.cursor.execute(request)
         return self.connection.commit()
 
-DB = Authorization(r"DB\authorization.db")
-DB.registration(table='users', user_log='name', password='1488')
