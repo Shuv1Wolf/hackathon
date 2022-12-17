@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Основное окно</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="order_button">

@@ -3,7 +3,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtCore import Qt
 from authorization import Authorization
 import sys
-
+import getpass
+from covertDB import Convert
 
 class EnterWindow(QMainWindow):
 
@@ -44,8 +45,12 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('mainUI.ui', self)
+        self.DB = Convert(r"DB\orders.db")
         self.reg_menu.clicked.connect(self.regWin)
         self.order_button.clicked.connect(self.orderWin)
+        self.orders_button.clicked.connect(self.ordersWin)
+        self.goods_button.clicked.connect(self.goodsWin)
+        self.bases_menu.clicked.connect(self.inst)
 
     def regWin(self):
         regWindowApplication()
@@ -54,6 +59,17 @@ class MainWindow(QMainWindow):
     def orderWin(self):
         orderWindowApplication()
         self.close()
+
+    def ordersWin(self):
+        orderListWindowApplication()
+        self.close()
+
+    def goodsWin(self):
+        goodsWindowApplication()
+        self.close()
+
+    def inst(self):
+        self.DB.convert()
 
 class RegWindow(QMainWindow):
     def __init__(self):
@@ -84,6 +100,24 @@ class OrderWindow(QMainWindow):
     def back(self):
         mainWin.show()
         self.close()
+class OrderListWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('orderList.ui', self)
+        self.back_button.clicked.connect(self.back)
+    def back(self):
+        mainWin.show()
+        self.close()
+
+class GoodsWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('goods.ui', self)
+        self.back_button.clicked.connect(self.back)
+    def back(self):
+        mainWin.show()
+        self.close()
+
 def application():
     app = QApplication(sys.argv)
     global enterWin
@@ -92,6 +126,7 @@ def application():
     global orderListWin
     global goodsWin
     global regWin
+
     enterWIn = EnterWindow()
     enterWIn.show()
 
@@ -101,6 +136,10 @@ def application():
 
     orderWin = OrderWindow()
 
+    orderListWin = OrderListWindow()
+
+    goodsWin = GoodsWindow()
+
     sys.exit(app.exec_())
 def mainWindowApplication():
     mainWin.show()
@@ -108,6 +147,10 @@ def regWindowApplication():
     regWin.show()
 def orderWindowApplication():
     orderWin.show()
+def orderListWindowApplication():
+    orderListWin.show()
+def goodsWindowApplication():
+    goodsWin.show()
 
 if __name__ == '__main__':
     application()
