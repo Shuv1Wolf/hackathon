@@ -117,11 +117,19 @@ class OrderListWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('orderList.ui', self)
+        self.load_button.clicked.connect(self.reload)
         self.back_button.clicked.connect(self.back)
-
+        self.reload()
     def back(self):
         mainWin.show()
         self.close()
+
+    def reload(self):
+        self.order_list.clear()
+        self.LS = Orders(r'DB\orders.db')
+        a = self.LS.product_lst()
+        for i in a:
+            self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
 
 class GoodsWindow(QMainWindow):
@@ -142,7 +150,7 @@ class GoodsWindow(QMainWindow):
         self.LS = Orders(r'DB\orders.db')
         a = self.LS.product_lst()
         for i in a:
-            self.goods_list.addItem('№' + str(i[0]) + ' ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
+            self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
     def appending(self):
         goodsLWindowApplication()
@@ -222,15 +230,17 @@ class GoodsListWindow(QMainWindow):
         temp = [str(self.name_line.text()), self.count_line.text(), self.price_line.text()]
         try:
             self.LS.add_admin_product(a+1, temp[0],int(temp[2]) , int(temp[1]))
+            self.massage.setText('')
         except:
-            print('Ошибка')
+            self.massage.setText('Ошибка')
     def deleting(self):
         self.LS = Orders(r'DB\orders.db')
         try:
-            print('Удалён товар с индексом ', int(self.id_line.text()))
-            LS.delete('product', int(self.id_line.text()))
+            t = int(self.id_line.text())
+            self.LS.delete('product', t)
+            self.massage.setText('')
         except:
-            print('Ошибка')
+            self.massage.setText('Ошибка')
 def application():
     app = QApplication(sys.argv)
     global enterWin
