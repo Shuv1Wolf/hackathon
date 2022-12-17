@@ -8,9 +8,9 @@ class Orders:
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
-    def add_admin_product(self, item_name, price, count):
+    def add_admin_product(self, id, item_name, price, count):
         """добавление товара и цены в БД с продаваемым продуктом (только для админов)"""
-        request = f"""INSERT INTO product VALUES('{item_name}', {price}, {count})"""
+        request = f"""INSERT INTO product VALUES({id}, '{item_name}', {price}, {count})"""
         self.cursor.execute(request)
         return self.connection.commit()
 
@@ -46,6 +46,8 @@ class Orders:
         sql_delete_query = f"""DELETE from {table} where id = {id}"""
         self.cursor.execute(sql_delete_query)
         self.connection.commit()
+
+
 
 
 

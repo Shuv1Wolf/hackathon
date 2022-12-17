@@ -171,6 +171,7 @@ class GoodsListWindow(QMainWindow):
         self.id_line.hide()
         self.delete_button.hide()
 
+        self.LS = Orders(r'DB\orders.db')
     def back(self):
         goodsWin.show()
         self.close()
@@ -215,8 +216,8 @@ class GoodsListWindow(QMainWindow):
 
             self.shd = False
     def appending(self):
-        self.LS = Orders(r'DB\orders.db')
-        self.LS.add_admin_product('СтулСтул', 12, 12)
+
+        self.LS.add_admin_product(id=6, item_name='СтулСтул', price=12, count=12)
 def application():
     app = QApplication(sys.argv)
     global enterWin
