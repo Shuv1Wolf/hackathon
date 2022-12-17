@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>398</width>
+    <width>392</width>
     <height>138</height>
    </rect>
   </property>
@@ -40,7 +40,7 @@
      <string>Список заказов</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="orders_button_2">
+   <widget class="QPushButton" name="goods_button">
     <property name="geometry">
      <rect>
       <x>270</x>
@@ -53,28 +53,32 @@
      <string>Товары на складе</string>
     </property>
    </widget>
-  </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>398</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>Базы данных</string>
+   <widget class="QPushButton" name="reg_menu">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
     </property>
-   </widget>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
+    <property name="text">
      <string>Добавить пользователя</string>
     </property>
    </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_2"/>
+   <widget class="QPushButton" name="bases_menu">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>191</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Скачать базы данных</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="Добавлены понты">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/authorization.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/authorization.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/authorization_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/authorization_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/enter.ui" beforeDir="false" afterPath="$PROJECT_DIR$/enter.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainUI.ui" beforeDir="false" afterPath="$PROJECT_DIR$/mainUI.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671279509004</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Добавлены понты">
+      <created>1671282269923</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1671282269923</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

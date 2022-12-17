@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Bank</string>
+   <string>Регистрация</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QLineEdit" name="login_place">
@@ -79,13 +79,13 @@
     <property name="geometry">
      <rect>
       <x>340</x>
-      <y>400</y>
+      <y>380</y>
       <width>75</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>OK</string>
+     <string>Сохранить</string>
     </property>
    </widget>
    <widget class="QLabel" name="massage">
@@ -102,6 +102,19 @@
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back_button">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Назад</string>
     </property>
    </widget>
   </widget>
