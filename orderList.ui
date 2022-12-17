@@ -27,7 +27,7 @@
      <string>Назад</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="orders_list">
+   <widget class="QListWidget" name="order_list">
     <property name="geometry">
      <rect>
       <x>20</x>
