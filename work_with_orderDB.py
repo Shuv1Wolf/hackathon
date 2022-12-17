@@ -36,7 +36,7 @@ class Orders:
         self.cursor.execute(request)
         return self.connection.commit()
 
-    def order_lst(self):
+    def product_lst(self):
         sqlite_select_query = """SELECT * from product"""
         self.cursor.execute(sqlite_select_query)
         result = self.cursor.fetchall()
