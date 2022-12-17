@@ -42,5 +42,12 @@ class Orders:
         result = self.cursor.fetchall()
         return result
 
+    def delete(self, table, id):
+        sql_delete_query = f"""DELETE from {table} where id = {id}"""
+        self.cursor.execute(sql_delete_query)
+        self.connection.commit()
+
+
+
 
 
