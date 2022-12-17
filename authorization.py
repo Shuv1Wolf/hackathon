@@ -29,7 +29,7 @@ class Authorization:
         table -> сама редактируемая таблица в БД
         user_log -> логин пользователя, который мы регистрируем
         password -> пароль пользователя, который мы регистрируем"""
-        request = f"""INSERT INTO users VALUES('{user_log}', '{password}')"""
+        request = f"""INSERT INTO {table} VALUES('{user_log}', '{password}')"""
         self.cursor.execute(request)
         return self.connection.commit()
 
