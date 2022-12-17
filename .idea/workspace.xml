@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="удаление 'мусора'">
-      <change afterPath="$PROJECT_DIR$/work_with_orderDB.py" afterDir="false" />
+    <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="добавлена БД с товарами и заказами&#10;добавлен класс для работы с добвленой БД">
+      <change afterPath="$PROJECT_DIR$/covertDB.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/authorization.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/authorization.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authorization.py" beforeDir="false" afterPath="$PROJECT_DIR$/authorization.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.work_with_orderDB">
+  <component name="RunManager" selected="Python.covertDB">
     <configuration name="authorization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hackathon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -75,6 +73,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/authorization_ui.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="covertDB" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="hackathon" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/covertDB.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,6 +167,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
+      <item itemvalue="Python.covertDB" />
       <item itemvalue="Python.work_with_orderDB" />
       <item itemvalue="Python.authorization" />
       <item itemvalue="Python.ssh" />
@@ -155,8 +175,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.work_with_orderDB" />
+        <item itemvalue="Python.covertDB" />
         <item itemvalue="Python.authorization_ui" />
+        <item itemvalue="Python.work_with_orderDB" />
         <item itemvalue="Python.ssh" />
         <item itemvalue="Python.authorization" />
       </list>
@@ -206,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671229481165</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="добавлена БД с товарами и заказами&#10;добавлен класс для работы с добвленой БД">
+      <created>1671268204077</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671268204077</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,6 +253,7 @@
     <MESSAGE value="Добавлен класс для работы с БД для авторизации и регистрации" />
     <MESSAGE value="БД для авторизации" />
     <MESSAGE value="удаление 'мусора'" />
-    <option name="LAST_COMMIT_MESSAGE" value="удаление 'мусора'" />
+    <MESSAGE value="добавлена БД с товарами и заказами&#10;добавлен класс для работы с добвленой БД" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена БД с товарами и заказами&#10;добавлен класс для работы с добвленой БД" />
   </component>
 </project>
