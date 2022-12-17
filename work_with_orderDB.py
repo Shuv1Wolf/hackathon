@@ -21,14 +21,6 @@ class Orders:
         result = self.cursor.fetchall()
         return result[id-1]
 
-    def get_list(self):
-        '''функция со списком товара для создания выподающего выбора товара'''
-        sqlite_select_query = f"""SELECT item from product"""
-        self.cursor.execute(sqlite_select_query)
-        result = self.cursor.fetchall()
-        string = re.sub(r'[^а-яА-Яa-zA-z" ,]', r'', str(result))
-        return string[1:len(string)-2].split(',,')
-
     def add_order(self, name, mail, title, quantity, price):
         """создание заказа в БД"""
         request = f"""INSERT INTO order1(name, mail, title, quantity, price)
@@ -61,6 +53,19 @@ class Orders:
         if item in lst1:
             flag = True
         return flag
+
+    def get_list_order(self, string):
+        lst = string.split('  ')
+        num = re.sub(r'[^0-9]', r'', lst[0])
+        sqlite_select_query = f"""SELECT * from order1 where id_order = {num}"""
+        self.cursor.execute(sqlite_select_query)
+        result = self.cursor.fetchall()
+        info = re.sub(r'[^а-яА-Яa-zA-z0-9" ,]', r'', str(result)).replace('[', '').replace(']', '')
+        return info.split(', ')
+
+
+
+
 
 
 
