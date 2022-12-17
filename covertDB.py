@@ -8,7 +8,7 @@ class Convert:
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
-    def convert(self):
+    def convert1(self):
         """функция для конвертирования БД в таблицу excel"""
         name = getpass.getuser()
         df1 = pd.read_sql('select * from product', self.connection)

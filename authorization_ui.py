@@ -106,9 +106,7 @@ class OrderListWindow(QMainWindow):
         super().__init__()
         uic.loadUi('orderList.ui', self)
         self.back_button.clicked.connect(self.back)
-        self.LS = Orders(r"DB\orders.db")
-        a = self.LS.product_lst()
-        print(a)
+
     def back(self):
         mainWin.show()
         self.close()
@@ -118,9 +116,18 @@ class GoodsWindow(QMainWindow):
         super().__init__()
         uic.loadUi('goods.ui', self)
         self.back_button.clicked.connect(self.back)
+        self.load_button.clicked.connect(self.reload)
+        self.reload()
     def back(self):
         mainWin.show()
         self.close()
+    def reload(self):
+        self.goods_list.clear()
+        self.LS = Orders(r'DB\orders.db')
+        a = self.LS.product_lst()
+        print(a)
+        for i in a:
+            self.goods_list.addItem('№' + str(i[0]) + ' ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
 def application():
     app = QApplication(sys.argv)
