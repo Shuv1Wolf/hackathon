@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="Добавлены понты" />
+    <list default="true" id="2534539d-8c49-4a7e-9f77-554b9b5ca768" name="Changes" comment="Добавлены основные рабочие окна">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DB/authorization.db" beforeDir="false" afterPath="$PROJECT_DIR$/DB/authorization.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authorization_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/authorization_ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order.ui" beforeDir="false" afterPath="$PROJECT_DIR$/order.ui" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -260,7 +265,28 @@
       <option name="project" value="LOCAL" />
       <updated>1671287186181</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавлены основные рабочие окна">
+      <created>1671287411591</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1671287411591</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Добавлены основные рабочие окна">
+      <created>1671287429250</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1671287429250</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Добавлены основные рабочие окна">
+      <created>1671287432401</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671287432401</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -281,6 +307,7 @@
     <MESSAGE value="удаление 'мусора'" />
     <MESSAGE value="добавлена БД с товарами и заказами&#10;добавлен класс для работы с добвленой БД" />
     <MESSAGE value="Добавлены понты" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Добавлены основные рабочие окна" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены основные рабочие окна" />
   </component>
 </project>

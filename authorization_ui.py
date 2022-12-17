@@ -100,6 +100,7 @@ def application():
     regWin = RegWindow()
 
     orderWin = OrderWindow()
+
     sys.exit(app.exec_())
 def mainWindowApplication():
     mainWin.show()
