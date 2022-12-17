@@ -47,6 +47,22 @@ class Orders:
         self.cursor.execute(sql_delete_query)
         self.connection.commit()
 
+    def item_in_product(self, item):
+        flag = False
+        lst1 = []
+        sqlite_select_query = f"""SELECT item from product"""
+        self.cursor.execute(sqlite_select_query)
+        result = self.cursor.fetchall()
+        text = re.sub(r'[^а-яА-Яa-zA-z" ,]', r'', str(result))
+        lst = text[1:len(text)-2].split(',,')
+        for i in range(len(lst)):
+            text = lst[i].strip()
+            lst1.append(text)
+        if item in lst1:
+            flag = True
+        return flag
+
+
 
 
 

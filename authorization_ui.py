@@ -114,11 +114,14 @@ class OrderWindow(QMainWindow):
 
 
 class OrderListWindow(QMainWindow):
+    spis = []
     def __init__(self):
         super().__init__()
         uic.loadUi('orderList.ui', self)
         self.load_button.clicked.connect(self.reload)
         self.back_button.clicked.connect(self.back)
+        self.delete_button.clicked.connect(self.delete)
+        self.order_list.currentItemChanged.connect(self.values)
         self.reload()
     def back(self):
         mainWin.show()
@@ -127,11 +130,16 @@ class OrderListWindow(QMainWindow):
     def reload(self):
         self.order_list.clear()
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst()
+        a = self.LS.product_lst('order1')
         for i in a:
-            self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
-
-
+            self.order_list.addItem('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
+            self.spis.append('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
+    def delete(self):
+        #print(self.order_list.selectedItems().text())
+        pass
+    def values(self):
+        a = self.order_list.currentRow()
+        print(self.spis[a])
 class GoodsWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -148,7 +156,7 @@ class GoodsWindow(QMainWindow):
     def reload(self):
         self.goods_list.clear()
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst()
+        a = self.LS.product_lst('product')
         for i in a:
             self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
@@ -225,7 +233,7 @@ class GoodsListWindow(QMainWindow):
             self.shd = False
     def appending(self):
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst()
+        a = self.LS.product_lst('product')
         a = a[-1][0]
         temp = [str(self.name_line.text()), self.count_line.text(), self.price_line.text()]
         try:
