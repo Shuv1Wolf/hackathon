@@ -39,6 +39,20 @@
     <property name="styleSheet">
      <string notr="true">font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
+    <property name="movement">
+     <enum>QListView::Free</enum>
+    </property>
+    <property name="currentRow">
+     <number>-1</number>
+    </property>
+    <property name="sortingEnabled">
+     <bool>false</bool>
+    </property>
+    <item>
+     <property name="text">
+      <string>5454453</string>
+     </property>
+    </item>
     <item>
      <property name="text">
       <string>№123123</string>
