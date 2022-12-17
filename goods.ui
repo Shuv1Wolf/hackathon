@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>372</width>
-    <height>279</height>
+    <height>313</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,6 +51,19 @@
     </property>
     <property name="text">
      <string>Обновить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="append_button">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>10</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Изменить товарный ряд</string>
     </property>
    </widget>
   </widget>
