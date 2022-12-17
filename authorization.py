@@ -19,11 +19,11 @@ class Authorization:
         self.cursor.execute(sqlite_select_query)
         result = self.cursor.fetchall()
         flag = False
-        hach_log = hashlib.sha384(login.encode())
-        hach_pas = hashlib.sha384(password.encode())
+        hash_log = hashlib.sha384(login.encode())
+        hash_pas = hashlib.sha384(password.encode())
         for i in range(len(result)):
             users = result[i]
-            if users[0] == hach_log.hexdigest() and users[1] == hach_pas.hexdigest():
+            if users[0] == hash_log.hexdigest() and users[1] == hash_pas.hexdigest():
                 flag = True
         return flag
 
