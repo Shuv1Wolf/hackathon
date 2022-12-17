@@ -5,7 +5,7 @@ from authorization import Authorization
 import sys
 
 
-class MainWindow(QMainWindow):
+class EnterWindow(QMainWindow):
 
     def __init__(self):
         super().__init__()
@@ -32,20 +32,41 @@ class MainWindow(QMainWindow):
 
 
     def check(self, log, pas):
-        flag = self.DB.check('users', log, pas)
+        flag = self.DB.check('admin', log, pas)
+        flag1 = self.DB.check('users',log, pas)
         if flag:
             print('Успешно')
             self.massage.setText('')
+            mainWindowApplication()
+            self.close()
+        elif flag1:
+            print('Успешно')
+            self.massage.setText('')
+            mainWindowApplication()
+            self.close()
         else:
             print('Отклонено')
             self.massage.setText('Отклонено')
 
 
+class MainWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('mainUI.ui', self)
+
 def application():
     app = QApplication(sys.argv)
-    window1 = MainWindow()
-    window1.show()
+    global enterWin
+    global mainWin
+    global orderWin
+    global orderListWin
+    global goodsWin
+    enterWIn = EnterWindow()
+    enterWIn .show()
+    mainWin = MainWindow()
     sys.exit(app.exec_())
+def mainWindowApplication():
+    mainWin.show()
 
 if __name__ == '__main__':
     application()
