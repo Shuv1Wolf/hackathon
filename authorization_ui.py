@@ -5,6 +5,7 @@ from authorization import Authorization
 import sys
 import getpass
 from covertDB import Convert
+from work_with_orderDB import Orders
 
 class EnterWindow(QMainWindow):
 
@@ -105,6 +106,9 @@ class OrderListWindow(QMainWindow):
         super().__init__()
         uic.loadUi('orderList.ui', self)
         self.back_button.clicked.connect(self.back)
+        self.LS = Orders(r"DB\orders.db")
+        a = self.LS.product_lst()
+        print(a)
     def back(self):
         mainWin.show()
         self.close()
