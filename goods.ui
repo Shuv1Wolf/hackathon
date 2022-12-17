@@ -27,7 +27,7 @@
      <string>Назад</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="listWidget_2">
+   <widget class="QListWidget" name="goods_list">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -39,16 +39,19 @@
     <property name="styleSheet">
      <string notr="true">font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
-    <item>
-     <property name="text">
-      <string>Стул комфорт, 1</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Санузел Прасковья, 12</string>
-     </property>
-    </item>
+   </widget>
+   <widget class="QPushButton" name="load_button">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>10</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Обновить</string>
+    </property>
    </widget>
   </widget>
  </widget>
