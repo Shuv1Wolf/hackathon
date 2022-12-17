@@ -130,7 +130,7 @@ class OrderListWindow(QMainWindow):
         a = self.LS.product_lst('order1')
         print(a)
         for i in a:
-           self.order_list.addItem('№'+str(i[0])+'  '+i[1]+'  '+i[2])
+            self.order_list.addItem('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
 
 
 class GoodsWindow(QMainWindow):
@@ -226,7 +226,7 @@ class GoodsListWindow(QMainWindow):
             self.shd = False
     def appending(self):
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst()
+        a = self.LS.product_lst('product')
         a = a[-1][0]
         temp = [str(self.name_line.text()), self.count_line.text(), self.price_line.text()]
         try:
