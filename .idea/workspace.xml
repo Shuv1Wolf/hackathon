@@ -38,7 +38,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.covertDB">
+  <component name="RunManager" selected="Python.authorization_ui">
     <configuration name="authorization" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="hackathon" />
       <option name="INTERPRETER_OPTIONS" value="" />

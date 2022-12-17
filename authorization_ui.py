@@ -33,7 +33,7 @@ class MainWindow(QMainWindow):
 
     def check(self, log, pas):
         flag = self.DB.check('users', log, pas)
-        if flag == True:
+        if flag:
             print('Успешно')
             self.massage.setText('')
         else:
