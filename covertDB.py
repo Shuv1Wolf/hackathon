@@ -1,5 +1,6 @@
 import pandas as pd
 import sqlite3
+import getpass
 
 class Convert:
 
@@ -7,14 +8,15 @@ class Convert:
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
-    def convert(self, place):
+    def convert(self):
         """функция для конвертирования БД в таблицу excel
         place -> место, куда будет конвертирован файл"""
+        name = getpass.getuser()
         df1 = pd.read_sql('select * from product', self.connection)
-        df1.to_excel(place + r'\file.xlsx', index=False)
-        df2 = pd.read_excel(place + r'\file.xlsx')
-        df2.to_csv(place + r'\file.csv', index=False)
+        df1.to_excel(rf'C:\Users\{name}\Downloads' + r'\file.xlsx', index=False)
+        df2 = pd.read_excel(rf'C:\Users\{name}\Downloads' + r'\file.xlsx')
+        df2.to_csv(rf'C:\Users\{name}\Downloads' + r'\file.csv', index=False)
 
 
 
-
+print(getpass.getuser())

@@ -36,6 +36,8 @@ class Orders:
         self.cursor.execute(request)
         return self.connection.commit()
 
+
+
 a = Orders(r'DB\orders.db')
 b = a.get_item_from_thePoduct(1)
 print(a.get_list())

@@ -33,3 +33,5 @@ class Authorization:
         self.cursor.execute(request)
         return self.connection.commit()
 
+
+
