@@ -36,8 +36,8 @@ class Orders:
         self.cursor.execute(request)
         return self.connection.commit()
 
-    def product_lst(self):
-        sqlite_select_query = """SELECT * from product"""
+    def product_lst(self, table):
+        sqlite_select_query = f"""SELECT * from {table}"""
         self.cursor.execute(sqlite_select_query)
         result = self.cursor.fetchall()
         return result
@@ -46,8 +46,8 @@ class Orders:
         sql_delete_query = f"""DELETE from {table} where id = {id}"""
         self.cursor.execute(sql_delete_query)
         self.connection.commit()
-LS = Orders(r'DB\orders.db')
-LS.delete('product', 10)
+#LS = Orders(r'DB\orders.db')
+#LS.delete('product', 10)
 
 
 
