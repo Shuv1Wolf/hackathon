@@ -158,6 +158,7 @@ class GoodsListWindow(QMainWindow):
         self.appending_button.clicked.connect(self.showappend)
         self.deleting_button.clicked.connect(self.showdelete)
         self.append_button.clicked.connect(self.appending)
+        self.delete_button.clicked.connect(self.deleting)
 
         self.label.hide()
         self.label_2.hide()
@@ -216,7 +217,20 @@ class GoodsListWindow(QMainWindow):
             self.shd = False
     def appending(self):
         self.LS = Orders(r'DB\orders.db')
-        self.LS.add_admin_product(80, 'СтулСтул', 12, 12)
+        a = self.LS.product_lst()
+        a = a[-1][0]
+        temp = [str(self.name_line.text()), self.count_line.text(), self.price_line.text()]
+        try:
+            self.LS.add_admin_product(a+1, temp[0],int(temp[2]) , int(temp[1]))
+        except:
+            print('Ошибка')
+    def deleting(self):
+        self.LS = Orders(r'DB\orders.db')
+        try:
+            print('Удалён товар с индексом ', int(self.id_line.text()))
+            LS.delete('product', int(self.id_line.text()))
+        except:
+            print('Ошибка')
 def application():
     app = QApplication(sys.argv)
     global enterWin
