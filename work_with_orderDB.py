@@ -46,8 +46,6 @@ class Orders:
         sql_delete_query = f"""DELETE from {table} where id = {id}"""
         self.cursor.execute(sql_delete_query)
         self.connection.commit()
-#LS = Orders(r'DB\orders.db')
-#LS.delete('product', 10)
 
 
 
