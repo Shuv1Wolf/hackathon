@@ -19,4 +19,3 @@ class Convert:
 
 
 
-print(getpass.getuser())
