@@ -8,9 +8,9 @@ class Orders:
         self.connection = sqlite3.connect(db_file)
         self.cursor = self.connection.cursor()
 
-    def add_admin_product(self, item_name, price):
+    def add_admin_product(self, item_name, price, count):
         """добавление товара и цены в БД с продаваемым продуктом (только для админов)"""
-        request = f"""INSERT INTO product VALUES('{item_name}', '{price}')"""
+        request = f"""INSERT INTO product VALUES('{item_name}', {price}, {count})"""
         self.cursor.execute(request)
         return self.connection.commit()
 
@@ -36,9 +36,12 @@ class Orders:
         self.cursor.execute(request)
         return self.connection.commit()
 
+    def order_lst(self):
+        sqlite_select_query = """SELECT * from product"""
+        self.cursor.execute(sqlite_select_query)
+        result = self.cursor.fetchall()
+        return result
 
 
-a = Orders(r'DB\orders.db')
-b = a.get_item_from_thePoduct(1)
-print(a.get_list())
+
 

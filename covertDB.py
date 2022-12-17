@@ -9,13 +9,14 @@ class Convert:
         self.cursor = self.connection.cursor()
 
     def convert(self):
-        """функция для конвертирования БД в таблицу excel
-        place -> место, куда будет конвертирован файл"""
+        """функция для конвертирования БД в таблицу excel"""
         name = getpass.getuser()
         df1 = pd.read_sql('select * from product', self.connection)
         df1.to_excel(rf'C:\Users\{name}\Downloads' + r'\file.xlsx', index=False)
         df2 = pd.read_excel(rf'C:\Users\{name}\Downloads' + r'\file.xlsx')
         df2.to_csv(rf'C:\Users\{name}\Downloads' + r'\file.csv', index=False)
+
+
 
 
 
