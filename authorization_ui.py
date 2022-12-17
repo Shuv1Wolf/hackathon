@@ -74,7 +74,7 @@ class MainWindow(QMainWindow):
         self.close()
 
     def inst(self):
-        self.DB.convert()
+        self.DB.convert1()
 
 
 class RegWindow(QMainWindow):
