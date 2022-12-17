@@ -127,10 +127,9 @@ class OrderListWindow(QMainWindow):
     def reload(self):
         self.order_list.clear()
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst('order1')
-        print(a)
+        a = self.LS.product_lst()
         for i in a:
-           self.order_list.addItem('№'+str(i[0])+'  '+i[1]+'  '+i[2])
+            self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
 
 class GoodsWindow(QMainWindow):
@@ -149,7 +148,7 @@ class GoodsWindow(QMainWindow):
     def reload(self):
         self.goods_list.clear()
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst('product')
+        a = self.LS.product_lst()
         for i in a:
             self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
