@@ -117,21 +117,23 @@ class OrderListWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('orderList.ui', self)
-        self.load_button.clicked.connect(self.reload)
         self.back_button.clicked.connect(self.back)
-        self.reload()
+
     def back(self):
         mainWin.show()
         self.close()
 
+<<<<<<<<< Temporary merge branch 1
+=========
     def reload(self):
         self.order_list.clear()
         self.LS = Orders(r'DB\orders.db')
         a = self.LS.product_lst('order1')
         print(a)
         for i in a:
-            self.order_list.addItem('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
+           self.order_list.addItem('№'+str(i[0])+'  '+i[1]+'  '+i[2])
 
+>>>>>>>>> Temporary merge branch 2
 
 class GoodsWindow(QMainWindow):
     def __init__(self):
@@ -151,7 +153,7 @@ class GoodsWindow(QMainWindow):
         self.LS = Orders(r'DB\orders.db')
         a = self.LS.product_lst('product')
         for i in a:
-            self.goods_list.addItem('ID:' + str(i[0]) + '  ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
+            self.goods_list.addItem('№' + str(i[0]) + ' ' + str(i[1]) + ' ' + str(i[3]) + ' ' + 'шт.')
 
     def appending(self):
         goodsLWindowApplication()
@@ -226,22 +228,20 @@ class GoodsListWindow(QMainWindow):
             self.shd = False
     def appending(self):
         self.LS = Orders(r'DB\orders.db')
-        a = self.LS.product_lst('product')
+        a = self.LS.product_lst()
         a = a[-1][0]
         temp = [str(self.name_line.text()), self.count_line.text(), self.price_line.text()]
         try:
             self.LS.add_admin_product(a+1, temp[0],int(temp[2]) , int(temp[1]))
-            self.massage.setText('')
         except:
-            self.massage.setText('Ошибка')
+            print('Ошибка')
     def deleting(self):
         self.LS = Orders(r'DB\orders.db')
         try:
-            t = int(self.id_line.text())
-            self.LS.delete('product', t)
-            self.massage.setText('')
+            print('Удалён товар с индексом ', int(self.id_line.text()))
+            LS.delete('product', int(self.id_line.text()))
         except:
-            self.massage.setText('Ошибка')
+            print('Ошибка')
 def application():
     app = QApplication(sys.argv)
     global enterWin
