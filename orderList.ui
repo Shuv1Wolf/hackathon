@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>387</width>
-    <height>504</height>
+    <width>637</width>
+    <height>535</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>351</width>
+      <width>601</width>
       <height>211</height>
      </rect>
     </property>
@@ -79,8 +79,8 @@
      <rect>
       <x>20</x>
       <y>310</y>
-      <width>341</width>
-      <height>21</height>
+      <width>611</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -95,8 +95,8 @@
      <rect>
       <x>20</x>
       <y>370</y>
-      <width>341</width>
-      <height>21</height>
+      <width>611</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -111,8 +111,8 @@
      <rect>
       <x>20</x>
       <y>400</y>
-      <width>341</width>
-      <height>21</height>
+      <width>611</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -127,8 +127,8 @@
      <rect>
       <x>20</x>
       <y>430</y>
-      <width>341</width>
-      <height>21</height>
+      <width>621</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -143,8 +143,8 @@
      <rect>
       <x>20</x>
       <y>280</y>
-      <width>341</width>
-      <height>21</height>
+      <width>611</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -157,7 +157,7 @@
    <widget class="QPushButton" name="delete_button">
     <property name="geometry">
      <rect>
-      <x>300</x>
+      <x>540</x>
       <y>10</y>
       <width>75</width>
       <height>41</height>
@@ -185,8 +185,8 @@
      <rect>
       <x>20</x>
       <y>340</y>
-      <width>341</width>
-      <height>21</height>
+      <width>611</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">

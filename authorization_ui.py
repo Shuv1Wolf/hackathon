@@ -264,10 +264,13 @@ class GoodsListWindow(QMainWindow):
     def appending(self):
         self.LS = Orders(r'DB\orders.db')
         a = self.LS.product_lst('product')
-        a = a[-1][0]
+        if a != []:
+            a = a[-1][0]
+        else:
+            a = 0
         temp = [str(self.name_line.text()), self.count_line.text(), self.price_line.text()]
         try:
-            self.LS.add_admin_product(a+1, temp[0],int(temp[2]) , int(temp[1]))
+            self.LS.add_admin_product(a+1, temp[0], int(temp[2]), int(temp[1]))
             self.massage.setText('')
         except:
             self.massage.setText('Ошибка')
