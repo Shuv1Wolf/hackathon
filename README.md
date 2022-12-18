@@ -18,4 +18,4 @@
 
 Также есть exe в облаке (архив): https://drive.google.com/file/d/1jDjlH2MpMueLe5xkXYvZoBv-lAyB8jY0/view?usp=sharing
 
-Для запуска нужно запустить разархивировать и запустить .exe файл.
+Для запуска нужно разархивировать архив и запустить "authorazation_ui.exe" файл.
