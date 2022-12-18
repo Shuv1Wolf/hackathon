@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>308</width>
+    <width>650</width>
     <height>527</height>
    </rect>
   </property>
@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>50</y>
       <width>301</width>
       <height>41</height>
      </rect>
@@ -46,8 +46,8 @@
    <widget class="QLineEdit" name="name_line">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>110</y>
+      <x>300</x>
+      <y>50</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -57,7 +57,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>160</y>
+      <y>330</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -72,8 +72,8 @@
    <widget class="QLineEdit" name="good_line">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>210</y>
+      <x>300</x>
+      <y>120</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -83,7 +83,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>260</y>
+      <y>190</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -98,8 +98,8 @@
    <widget class="QLineEdit" name="count_line">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>310</y>
+      <x>300</x>
+      <y>190</y>
       <width>291</width>
       <height>41</height>
      </rect>
@@ -108,8 +108,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>370</y>
+      <x>20</x>
+      <y>460</y>
       <width>171</width>
       <height>41</height>
      </rect>
@@ -121,12 +121,25 @@
      <string>Итого:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QPushButton" name="agree_button">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>420</y>
-      <width>121</width>
+      <x>530</x>
+      <y>450</y>
+      <width>75</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Сохранить</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>291</width>
       <height>41</height>
      </rect>
     </property>
@@ -134,20 +147,59 @@
      <string notr="true">font: 26pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
-     <string>0</string>
+     <string>Цена за шт.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="agree_button">
+   <widget class="QLineEdit" name="count_line_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>370</y>
-      <width>75</width>
+      <x>300</x>
+      <y>260</y>
+      <width>291</width>
       <height>41</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 26pt &quot;Arial&quot;;</string>
+    </property>
     <property name="text">
-     <string>Сохранить</string>
+     <string>Почта заказчика</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="good_line_2">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>330</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>460</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 26pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Ошибка</string>
     </property>
    </widget>
   </widget>

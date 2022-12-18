@@ -39,6 +39,11 @@ class Orders:
         self.cursor.execute(sql_delete_query)
         self.connection.commit()
 
+    def delete1(self, table, id):
+        sql_delete_query = f"""DELETE from {table} where id_order = {id}"""
+        self.cursor.execute(sql_delete_query)
+        self.connection.commit()
+
     def item_in_product(self, item):
         flag = False
         lst1 = []
@@ -60,9 +65,10 @@ class Orders:
         sqlite_select_query = f"""SELECT * from order1 where id_order = {num}"""
         self.cursor.execute(sqlite_select_query)
         result = self.cursor.fetchall()
-        info = re.sub(r'[^а-яА-Яa-zA-z0-9" ,]', r'', str(result)).replace('[', '').replace(']', '')
+        info = re.sub(r'[^а-яА-Яa-zA-z0-9" ,.@]', r'', str(result)).replace('[', '').replace(']', '')
         return info.split(', ')
-
+LS = Orders(r'DB\orders.db')
+LS.delete1('order1', 3)
 
 
 

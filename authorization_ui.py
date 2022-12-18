@@ -108,7 +108,7 @@ class OrderWindow(QMainWindow):
         uic.loadUi('order.ui', self)
         self.back_button.clicked.connect(self.back)
         self.agree_button.clicked.connect(self.agree)
-        self.label_2.setText('')
+        self.label_8.setText('')
 
     def back(self):
         mainWin.show()
@@ -125,6 +125,8 @@ class OrderWindow(QMainWindow):
                 b = int(b)
                 self.LS.add_order(self.name_line.text(), self.good_line.text(), self.good_line_2.text(), c, b)
                 self.label_8.setText(b * c)
+                orderListWin.spis.clear()
+                orderListWin.spis.append('№' + 37 + '  ' + self.name_line.text() + '  ' +self.good_line.text())
             except:
                #self.label_8.setText('Ошибка')
                 pass
@@ -149,19 +151,22 @@ class OrderListWindow(QMainWindow):
 
     def reload(self):
         self.order_list.clear()
+        self.spis.clear()
         self.LS = Orders(r'DB\orders.db')
         a = self.LS.product_lst('order1')
         for i in a:
             self.order_list.addItem('№' + str(i[0]) + '  ' + i[1] + ' ' + i[2])
             self.spis.append('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
+
     def delete(self):
+        self.LS = Orders(r'DB\orders.db')
         c = self.spis[self.a].split()
         c = c[0].replace('№', '')
-        print('Удалён заказ номер', c)
+        self.spis.pop(self.a)
+        self.LS.delete1('order1', c)
 
     def values(self):
         self.a = self.order_list.currentRow()
-        print(self.spis[self.a])
         self.LS = Orders(r'DB\orders.db')
         b = self.LS.get_list_order(self.spis[self.a])
         self.name_label.setText('Имя заказчика: '+b[1])
