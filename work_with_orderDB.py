@@ -67,9 +67,15 @@ class Orders:
         result = self.cursor.fetchall()
         info = re.sub(r'[^а-яА-Яa-zA-z0-9" ,.@]', r'', str(result)).replace('[', '').replace(']', '')
         return info.split(', ')
-LS = Orders(r'DB\orders.db')
-LS.delete1('order1', 3)
 
+    def price_for_one(self, item):
+        sqlite_select_query = f"""SELECT * from product"""
+        self.cursor.execute(sqlite_select_query)
+        result = self.cursor.fetchall()
+        for i in range(len(result)):
+            if item in result[i]:
+                num = result[i]
+                return num[2]
 
 
 

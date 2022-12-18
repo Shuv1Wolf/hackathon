@@ -86,16 +86,11 @@ class RegWindow(QMainWindow):
         self.back_button.clicked.connect(self.back)
 
     def registr(self):
-        print('Зарегестрировано')
-        print('Логин:', self.login_place.text())
-        print('Пароль:', self.password_place.text())
         temp = tuple((self.login_place.text(), self.password_place.text()))
         if self.checkBox.checkState():
             reg = self.DB.registration(table='admin', user_log=temp[0], password=temp[1])
-            print('admin')
         else:
             reg = self.DB.registration(table='users', user_log=temp[0], password=temp[1])
-            print('user')
 
     def back(self):
         mainWin.show()
@@ -115,24 +110,23 @@ class OrderWindow(QMainWindow):
         self.close()
     def agree(self):
         F = Orders(r'DB\orders.db')
-        flag = F.item_in_product(self.good_line_2.text())
+        s = self.good_line_2.text()
+        flag = F.item_in_product(s)
         self.LS = Orders(r'DB\orders.db')
-        if flag:
-            try:
+        try:
+            if flag:
+                b = self.LS.price_for_one(s)
                 c = self.count_line.text()
                 c = int(c)
-                b = self.count_line_2.text()
-                b = int(b)
-                self.LS.add_order(self.name_line.text(), self.good_line.text(), self.good_line_2.text(), c, b)
-                self.label_8.setText(b * c)
-                orderListWin.spis.clear()
-                orderListWin.spis.append('№' + 37 + '  ' + self.name_line.text() + '  ' +self.good_line.text())
-            except:
-               #self.label_8.setText('Ошибка')
-                pass
-        else:
+                self.count_line_2.setText(str(b))
+                self.LS.add_order(self.name_line.text(), self.good_line.text(), self.good_line_2.text(), c, b*c)
+                orderListWin.reload()
+                self.label_8.setText(str(b*c))
+            else:
+                self.label_8.setText('Ошибка')
+        except:
             self.label_8.setText('Ошибка')
-            print(flag)
+
 
 class OrderListWindow(QMainWindow):
     spis = []
@@ -174,7 +168,7 @@ class OrderListWindow(QMainWindow):
         self.mail_label.setText('Почта заказчика: ' + b[2])
         self.good_label.setText('Наименование товара: ' + b[3])
         self.count_label.setText('Количество: ' + b[4])
-        self.sum_label.setText('Сумма: ' + b[4])
+        self.sum_label.setText('Сумма: ' + str(b[5]))
 
 class GoodsWindow(QMainWindow):
     def __init__(self):
