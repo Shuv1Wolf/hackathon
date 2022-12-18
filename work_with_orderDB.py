@@ -76,10 +76,3 @@ class Orders:
             if item in result[i]:
                 num = result[i]
                 return num[2]
-
-
-
-
-
-
-
