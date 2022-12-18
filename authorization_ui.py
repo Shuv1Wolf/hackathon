@@ -107,14 +107,34 @@ class OrderWindow(QMainWindow):
         super().__init__()
         uic.loadUi('order.ui', self)
         self.back_button.clicked.connect(self.back)
+        self.agree_button.clicked.connect(self.agree)
+        self.label_2.setText('')
 
     def back(self):
         mainWin.show()
         self.close()
-
+    def agree(self):
+        F = Orders(r'DB\orders.db')
+        flag = F.item_in_product(self.good_line_2.text())
+        self.LS = Orders(r'DB\orders.db')
+        if flag:
+            try:
+                c = self.count_line.text()
+                c = int(c)
+                b = self.count_line_2.text()
+                b = int(b)
+                self.LS.add_order(self.name_line.text(), self.good_line.text(), self.good_line_2.text(), c, b)
+                self.label_8.setText(b * c)
+            except:
+               #self.label_8.setText('Ошибка')
+                pass
+        else:
+            self.label_8.setText('Ошибка')
+            print(flag)
 
 class OrderListWindow(QMainWindow):
     spis = []
+    a = 0
     def __init__(self):
         super().__init__()
         uic.loadUi('orderList.ui', self)
@@ -132,14 +152,25 @@ class OrderListWindow(QMainWindow):
         self.LS = Orders(r'DB\orders.db')
         a = self.LS.product_lst('order1')
         for i in a:
-            self.order_list.addItem('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
+            self.order_list.addItem('№' + str(i[0]) + '  ' + i[1] + ' ' + i[2])
             self.spis.append('№' + str(i[0]) + '  ' + i[1] + '  ' + i[2])
     def delete(self):
-        #print(self.order_list.selectedItems().text())
-        pass
+        c = self.spis[self.a].split()
+        c = c[0].replace('№', '')
+        print('Удалён заказ номер', c)
+
     def values(self):
-        a = self.order_list.currentRow()
-        print(self.spis[a])
+        self.a = self.order_list.currentRow()
+        print(self.spis[self.a])
+        self.LS = Orders(r'DB\orders.db')
+        b = self.LS.get_list_order(self.spis[self.a])
+        self.name_label.setText('Имя заказчика: '+b[1])
+        self.number_label.setText('Номер заказа: '+b[0])
+        self.mail_label.setText('Почта заказчика: ' + b[2])
+        self.good_label.setText('Наименование товара: ' + b[3])
+        self.count_label.setText('Количество: ' + b[4])
+        self.sum_label.setText('Сумма: ' + b[4])
+
 class GoodsWindow(QMainWindow):
     def __init__(self):
         super().__init__()

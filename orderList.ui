@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>387</width>
-    <height>444</height>
+    <height>504</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,8 +39,23 @@
     <property name="styleSheet">
      <string notr="true">font: 15pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::CurrentChanged|QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="dragDropOverwriteMode">
+     <bool>false</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DropOnly</enum>
+    </property>
     <property name="movement">
-     <enum>QListView::Free</enum>
+     <enum>QListView::Static</enum>
+    </property>
+    <property name="isWrapping" stdset="0">
+     <bool>false</bool>
     </property>
     <property name="currentRow">
      <number>-1</number>
@@ -59,7 +74,7 @@
      </property>
     </item>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="name_label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -72,26 +87,10 @@
      <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Имя заказчика</string>
+     <string>Имя заказчика:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>340</y>
-      <width>341</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Товар</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="good_label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -104,10 +103,10 @@
      <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Количество</string>
+     <string>Наименование товара:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_4">
+   <widget class="QLabel" name="count_label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -120,10 +119,26 @@
      <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Сумма</string>
+     <string>Количество:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_5">
+   <widget class="QLabel" name="sum_label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>430</y>
+      <width>341</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Сумма:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="number_label">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -136,7 +151,7 @@
      <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>Номер заказа</string>
+     <string>Номер заказа:</string>
     </property>
    </widget>
    <widget class="QPushButton" name="delete_button">
@@ -163,6 +178,22 @@
     </property>
     <property name="text">
      <string>Обновить</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mail_label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>341</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 14pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Почта заказчика:</string>
     </property>
    </widget>
   </widget>
